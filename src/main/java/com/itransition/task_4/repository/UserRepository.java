@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
-	@Query(value="select * from user u where u.email= :email and status=true", nativeQuery=true)
+	@Query(value="select * from users u where u.email= :email and status=true", nativeQuery=true)
 	User findByEmail(String email);
 	void deleteById(Long id);
 }

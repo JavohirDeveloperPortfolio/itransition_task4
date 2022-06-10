@@ -14,7 +14,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
 @Entity
-@Table(name =  "user", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+@Table(name =  "users", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class User {
 	
 	@Id
@@ -26,11 +26,14 @@ public class User {
 	
 	@Column(name = "last_name")
 	private String lastName;
-	
+
+	@Column(name = "email")
 	private String email;
-	
+
+	@Column(name = "password")
 	private String password;
 
+	@Column(name = "status")
 	private boolean status;/*if status is true user active else blocked*/
 
 	@CreationTimestamp
